@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tiwari Agro - quality agriculture, sustainable farming and a better future.">
+    <title>Tiwari Agro | Growing a Better Future</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8f2;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: #145c2b;
+            color: white;
+            padding: 16px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+        }
+
+        .navbar nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        .navbar nav a:hover {
+            color: #b7f7a5;
+        }
+
+        .hero {
+            min-height: 440px;
+            padding: 70px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(rgba(0, 45, 10, 0.58), rgba(0, 45, 10, 0.58)),
+                url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(32px, 5vw, 50px);
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            color: white;
+            font-size: clamp(20px, 3vw, 28px);
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #2e8b42;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background: #145c2b;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        section {
+            padding: 55px 7%;
+            text-align: center;
+            scroll-margin-top: 20px;
+        }
+
+        section h2 {
+            color: #145c2b;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .section-intro {
+            max-width: 720px;
+            margin: 0 auto 28px;
+        }
+
+        .services-container,
+        .products-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .service,
+        .product-card {
+            background: white;
+            flex: 1 1 260px;
+            max-width: 340px;
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+            transition: transform 0.25s ease;
+        }
+
+        .service:hover,
+        .product-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .service img,
+        .product-card img {
+            width: 100%;
+            height: 195px;
+            object-fit: cover;
+            border-radius: 9px;
+            display: block;
+            margin-bottom: 14px;
+        }
+
+        .service h3,
+        .product-card h3 {
+            color: #247a35;
+            margin-bottom: 8px;
+        }
+
+        .about {
+            background: #e8f5e9;
+            border-radius: 15px;
+            margin: 25px 7%;
+            padding: 50px 25px;
+        }
+
+        .about p {
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 14px auto;
+        }
+
+        .about h3 {
+            color: #247a35;
+            margin-top: 22px;
+        }
+
+        .contact {
+            background: #f1f8e9;
+            border-radius: 15px;
+            margin: 25px 7%;
+            padding: 45px 20px;
+        }
+
+        .contact p {
+            margin: 12px 0;
+            font-size: 17px;
+        }
+
+        .location {
+            padding-top: 35px;
+        }
+
+        .location iframe {
+            width: 100%;
+            max-width: 950px;
+            height: 350px;
+            border: 0;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 18px;
+            background: #25D366;
+            color: white;
+            padding: 13px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #145c2b;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 25px;
+        }
+
+        footer h3 {
+            color: white;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 16px 20px;
+            }
+
+            .navbar nav {
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 380px;
+                padding: 55px 18px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 42px 18px;
+            }
+
+            .about,
+            .contact {
+                margin: 18px;
+                padding: 35px 18px;
+            }
+
+            .service,
+            .product-card {
+                width: 100%;
+                max-width: 420px;
+            }
+
+            .location iframe {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">🌱 TIWARI AGRO</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero" id="home">
+            <h1>Welcome to Tiwari Agro</h1>
+            <h2>Growing Together, Growing Better.</h2>
+            <p>
+                आधुनिक कृषि, गुणस्तरीय उत्पादन र समृद्ध किसान हाम्रो लक्ष्य।<br>
+                Quality Agriculture, Sustainable Future.
+            </p>
+            <a href="#contact" class="hero-btn">Contact Us</a>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Services / हाम्रो सेवा</h2>
+            <p class="section-intro">
+                We support better farming through practical agricultural services and modern approaches.
+            </p>
+
+            <div class="services-container">
+                <div class="service">
+                    <img src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95"
+                         alt="Agricultural products">
+                    <h3>🌱 Agricultural Products</h3>
+                    <p>कृषि उत्पादन तथा सामग्री।</p>
+                </div>
+
+                <div class="service">
+                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2"
+                         alt="Organic farming">
+                    <h3>🌾 Organic Farming</h3>
+                    <p>स्वस्थ तथा प्राकृतिक कृषि उत्पादन।</p>
+                </div>
+
+                <div class="service">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+                         alt="Agricultural technology">
+                    <h3>🚜 Agricultural Technology</h3>
+                    <p>आधुनिक कृषि प्रविधि तथा उपकरणहरू।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products">
+            <h2>Our Products / हाम्रा उत्पादनहरू</h2>
+            <p class="section-intro">
+                ताजा, स्वस्थ र गुणस्तरीय कृषि उत्पादनहरू।
+            </p>
+
+            <div class="products-container">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999"
+                         alt="Fresh vegetables">
+                    <h3>🥬 Fresh Vegetables</h3>
+                    <p>ताजा तथा गुणस्तरीय तरकारी उत्पादन।</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf"
+                         alt="Fresh fruits">
+                    <h3>🍎 Fresh Fruits</h3>
+                    <p>स्वस्थ र ताजा फलफूल उत्पादन।</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b"
+                         alt="Grains and farm products">
+                    <h3>🌾 Grains & Farm Products</h3>
+                    <p>गुणस्तरीय कृषि उत्पादन।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about" id="about">
+            <h2>About Tiwari Agro</h2>
+            <p>
+                Tiwari Agro & Agriculture is an upcoming agriculture business based in
+                Syangja, Nepal. We aim to promote modern farming, vegetable production
+                and sustainable agriculture.
+            </p>
+            <p>
+                टिवारी एग्रो एण्ड एग्रिकल्चर स्याङ्जामा आधारित एक योजनाबद्ध कृषि व्यवसाय हो।
+                हाम्रो उद्देश्य आधुनिक कृषि प्रविधि, गुणस्तरीय कृषि उत्पादन र किसानहरूको
+                समृद्धिमा योगदान पुर्‍याउनु हो।
+            </p>
+            <h3>🌱 हाम्रो लक्ष्य: समृद्ध किसान, समृद्ध नेपाल।</h3>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Contact Us / सम्पर्क</h2>
+            <p>Have questions? Contact Tiwari Agro.</p>
+            <p>📍 Location: Waling, Syangja, Nepal</p>
+            <p>📞 Phone: आफ्नो वास्तविक फोन नम्बर यहाँ राख्नुहोस्</p>
+            <p>📧 Email: आफ्नो इमेल ठेगाना यहाँ राख्नुहोस्</p>
+
+            <!-- Replace 97798XXXXXXXX with your WhatsApp number, without + -->
+            <a href="https://wa.me/97798XXXXXXXX"
+               class="whatsapp-btn"
+               target="_blank"
+               rel="noopener noreferrer">
+                💬 Chat on WhatsApp
+            </a>
+        </section>
+
+        <!-- Location Section -->
+        <section class="location">
+            <h2>📍 Find Us</h2>
+            <p>Waling, Syangja, Nepal</p>
+            <iframe
+                src="https://maps.google.com/maps?q=Waling%2C%20Syangja%2C%20Nepal&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3>🌱 Tiwari Agro</h3>
+        <p>Growing Together, Growing Better.</p>
+        <p>© 2026 Tiwari Agro & Agriculture. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
